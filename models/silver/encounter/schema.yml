@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: encounter_silver
+    description: Cleaned encounter data with class and period extracted
+    columns:
+      - name: encounter_id
+        tests:
+          - not_null
+          - unique
+      - name: encounter_status
+      - name: encounter_class_code
+      - name: start_date
+      - name: end_date

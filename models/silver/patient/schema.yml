@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: patient_silver
+    description: "Cleaned patient data from the Bronze layer"
+    columns:
+      - name: patient_id
+        description: "Unique patient identifier"
+        tests:
+          - not_null
+          - unique
+      - name: gender
+        description: "Gender of the patient"
+        tests:
+          - not_null
+      - name: birth_date
+        description: "Date of birth"
+      - name: active
+        description: "Whether the patient record is active"
+      - name: resource_type
+        description: "FHIR resource type (should be 'Patient')"

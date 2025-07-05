@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: fhir_clean
+    description: "Bronze layer with raw FHIR data"
+    tables:
+      - name: encounter
+        description: "Raw encounter data"
+      - name: patient
+        description: "Raw patient data"
