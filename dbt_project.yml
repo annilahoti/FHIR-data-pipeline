@@ -25,3 +25,7 @@ models:
     silver:      # Silver layer
       +schema: silver
       +materialized: table
+
+    gold:
+      +schema: gold
+      +materialized: table

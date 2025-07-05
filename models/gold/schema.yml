@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: patient_encounter_analysis
+    description: "Final gold model that combines patient and encounter data for analytical use. Includes derived metrics such as length of stay."
+    columns:
+      - name: patient_id
+        description: "Unique identifier of the patient"
+        tests:
+          - not_null
+
+      - name: gender
+        description: "Gender of the patient"
+        tests:
+          - not_null
+
+      - name: birth_date
+        description: "Date of birth of the patient"
+
+      - name: encounter_id
+        description: "Unique identifier of the encounter"
+        tests:
+          - not_null
+
+      - name: encounter_type
+        description: "Code representing the type/class of the encounter"
+
+      - name: encounter_start
+        description: "Start date and time of the encounter"
+        tests:
+          - not_null
+
+      - name: encounter_end
+        description: "End date and time of the encounter"
+        tests:
+          - not_null
+
+      - name: length_of_stay_days
+        description: "Length of stay calculated as difference between end and start dates, in days"
+
+      - name: status
+        description: "Status of the encounter, e.g. 'finished', 'in-progress'"
+
+  - name: patient_encounter_count
+    description: "Gold model that shows number of encounters per patient."
+    columns:
+      - name: patient_id
+        description: "Unique identifier of the patient"
+        tests:
+          - not_null
+
+      - name: total_encounters
+        description: "Total number of encounters the patient has had"
+        tests:
+          - not_null
